@@ -1,14 +1,22 @@
+package Main;
+
 import Partida.Partida;
 import Posiçoes.*;
 import Jogador.Jogador;
 
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
+        //quem começa a partida
+        Random random = new Random();
+        int numero = random.nextInt(2) + 1;
+
+        System.out.println(numero);
 
         Partida Partida = new Partida();
 
@@ -26,17 +34,6 @@ public class Main {
 
         Partida.EscolhendoTime(Time2);
 
-        Partida.simulaPartida();
-
-
-
-
-
-
-
-
-
-
+        Partida.simulaPartida(numero, 2, Partida);
     }
-
 }

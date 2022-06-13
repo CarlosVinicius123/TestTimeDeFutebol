@@ -39,7 +39,7 @@ public class Partida {
     public void EscolhendoTime(String escolhaDoTime){
 
 
-        if(escolhaDoTime=="A"){
+        if(escolhaDoTime.equals("A")){
             AtacanteA = new Atacante(70);
             MeioDeCampoA = new MeioDeCampo(50);
             GoleiroA = new Goleiro(40);
@@ -47,7 +47,7 @@ public class Partida {
             list.add(MeioDeCampoA);
             list.add(GoleiroA);
         }
-        if(escolhaDoTime=="B"){
+        if(escolhaDoTime.equals("B")){
             AtacanteB = new Atacante(40);
             MeioDeCampoB = new MeioDeCampo(50);
             GoleiroB = new Goleiro(70);
@@ -56,7 +56,7 @@ public class Partida {
             list2.add(GoleiroB);
         }
 
-        if(escolhaDoTime=="C"){
+        if(escolhaDoTime.equals("C")){
             AtacanteC = new Atacante(50);
             MeioDeCampoC = new MeioDeCampo(60);
             GoleiroC = new Goleiro(50);
@@ -67,13 +67,7 @@ public class Partida {
 
     }
 
-
-    public void simulaPartida(){
-
-        //quem começa a partida
-        Random random = new Random();
-        int numero = random.nextInt(2);
-        int y = 2; //local da bola, 1 para defesa, 2 para meio, 3 para ataque
+    public void simulaPartida(int numero, int y, Partida Partida){
 
 
         switch(numero){
@@ -81,29 +75,32 @@ public class Partida {
                 switch(y){
 
                     case 1:
-                        if(list != null && list2 == null){
-                            GoleiroA.PassarAbola(probabilidade);
+                        if(list.size() != 0 && list2.size() == 0){
+                            GoleiroA.PassarAbola(probabilidade, Partida);
                         }
                         if(list == null && list2 != null){
-                            GoleiroB.PassarAbola(probabilidade);
+                            GoleiroB.PassarAbola(probabilidade, Partida);
                         }
+                        break;
 
                     case 2:
                         if(list != null && list2 == null){
-                            MeioDeCampoA.PassarAbola(probabilidade);
+                            MeioDeCampoA.PassarAbola(probabilidade, Partida);
                         }
                         if(list == null && list2 != null){
-                            MeioDeCampoB.PassarAbola(probabilidade);
+                            MeioDeCampoB.PassarAbola(probabilidade, Partida);
                         }
+                        break;
 
 
                     case 3:
                         if(list != null && list2 == null){
-                            AtacanteA.FazerGol(probabilidade);
+                            AtacanteA.FazerGol(probabilidade, Partida);
                         }
                         if(list == null && list2 != null){
-                            AtacanteB.FazerGol(probabilidade);
+                            AtacanteB.FazerGol(probabilidade, Partida);
                         }
+                        break;
 
 
                     case 4:
@@ -116,41 +113,37 @@ public class Partida {
 
                     case 1:
                         if(list2 != null && list3 == null){
-                            GoleiroB.PassarAbola(probabilidade);
+                            GoleiroB.PassarAbola(probabilidade, Partida);
                         }
                         if(list2 == null && list3 != null){
-                            GoleiroC.PassarAbola(probabilidade);
+                            GoleiroC.PassarAbola(probabilidade, Partida);
                         }
+                        break;
 
                     case 2:
                         if(list2 != null && list3 == null){
-                            MeioDeCampoB.PassarAbola(probabilidade);
+                            MeioDeCampoB.PassarAbola(probabilidade, Partida);
                         }
                         if(list2 == null && list3 != null){
-                            MeioDeCampoC.PassarAbola(probabilidade);
+                            MeioDeCampoC.PassarAbola(probabilidade, Partida);
                         }
+                        break;
 
 
                     case 3:
                         if(list2 != null && list3 == null){
-                            AtacanteB.FazerGol(probabilidade);
+                            AtacanteB.FazerGol(probabilidade,Partida);
                         }
                         if(list2 == null && list3 != null){
-                            AtacanteC.FazerGol(probabilidade);
+                            AtacanteC.FazerGol(probabilidade, Partida);
                         }
+                        break;
 
 
                     case 4:
                         System.out.println("Gol do time B");
                         break;
                 }
-
         }
-
-
     }
-
-
-
-
 }

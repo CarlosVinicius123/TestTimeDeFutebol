@@ -1,6 +1,7 @@
 package Posiçoes;
 
 import Jogador.Jogador;
+import Partida.Partida;
 
 public class Goleiro extends Jogador {
 
@@ -15,44 +16,44 @@ public class Goleiro extends Jogador {
 
     int ChanceDePasseGoleiro = 10 + defesa;
 
-    public void PassarAbola(int probabilidade){
+    public void PassarAbola(int probabilidade, Partida Partida){
         if(numero == 1) {
             if (probabilidade <= ChanceDePasseGoleiro) {
-                return y = 2;
-                return numero = 1;
+                y = 2;
+                numero = 1;
                 System.out.println("Time 1 passou a bola do goleiro para o meio de campo");
+                Partida.simulaPartida(numero,y,Partida);
+
             } else {
-                return y = 3;
-                return numero = 2;
+                y = 3;
+                numero = 2;
                 System.out.println("Time 1 perdeu a bola para o time 2, bola no ataque do time 2");
-                ChanceDePasseGoleiro = ChanceDePasseGoleiro - 10;
+                ChanceDePasseGoleiro = ChanceDePasseGoleiro + 10;
+                Partida.simulaPartida(numero,y,Partida);
+
             }
         }
         if(numero == 2) {
             if (probabilidade <= ChanceDePasseGoleiro) {
-                return y = 2;
-                return numero = 2;
+                y = 2;
+                numero = 2;
                 System.out.println("Time 1 passou a bola do goleiro para o meio de campo");
+                Partida.simulaPartida(numero,y,Partida);
+
             } else {
-                return y = 3;
-                return numero = 1;
+                y = 3;
+                numero = 1;
                 System.out.println("Time 2 perdeu a bola para o time 1, bola no ataque do time 1");
                 ChanceDePasseGoleiro = ChanceDePasseGoleiro + 10;
+                Partida.simulaPartida(numero,y,Partida);
+
             }
         }
-    }
-
-
-    //construtor
-    public Goleiro(String nome, String posicao) {
-        super(nome, posicao);
     }
 
     //métodos específicos
     public void cobrarTirodeMeta(){
         System.out.println("Goleiro cobrando tiro de meta!");
     }
-
-
 
 }

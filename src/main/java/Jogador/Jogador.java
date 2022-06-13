@@ -4,16 +4,10 @@ import java.util.Random;
 import java.util.Random;
  public abstract class Jogador{
 
-        private String nome, posicao;
+     //membros
+     private String nome, posicao;
 
-        //construtores
-        public Jogador(String nome, String posicao) {
-            this.nome = nome;
-            this.posicao = posicao;
-
-        }
-
-        //metodos
+     //metodos
         public void correr(){
             System.out.println("O jogador " + this.getNome() + " está correndo!");
         }

@@ -4,6 +4,8 @@ import Jogador.Jogador;
 import Posiçoes.Atacante;
 import Posiçoes.Goleiro;
 import Posiçoes.MeioDeCampo;
+import org.w3c.dom.ls.LSOutput;
+
 import java.util.ArrayList;
 import java.util.Random;
 public class Partida {
@@ -29,6 +31,10 @@ public class Partida {
     ArrayList<Jogador> list = new ArrayList<>();
     ArrayList<Jogador> list2 = new ArrayList<>();
     ArrayList<Jogador> list3 = new ArrayList<>();
+
+    public void MostrarProb(){
+        System.out.println(probabilidade);
+    }
 
     //Metodo para criar um time chamado na main e adicionar esse time na lista
     public void EscolhendoTime(String escolhaDoTime){
@@ -59,6 +65,7 @@ public class Partida {
             list3.add(MeioDeCampoC);
             list3.add(GoleiroC);
         }
+
 
     }
 

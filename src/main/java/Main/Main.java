@@ -1,16 +1,8 @@
 package Main;
-
 import Partida.Partida;
-import Posiçoes.*;
-import Jogador.Jogador;
-
-import java.util.LinkedList;
-import java.util.Queue;
 import java.util.Random;
 import java.util.Scanner;
-
 public class Main {
-
     public static void main(String[] args) {
 
         //Criaçao das variaveis
@@ -22,6 +14,8 @@ public class Main {
         System.out.println(timeJogando);  //Mostrando qual time vai começar
 
         Partida Partida = new Partida(); //Criaçao de uma nova partida
+
+        Partida.MostrarProb();
 
         Scanner ler = new Scanner(System.in); //Pedir para o usuario digitar o time desejado
         System.out.println("Escolha o seu time A, B ou C");

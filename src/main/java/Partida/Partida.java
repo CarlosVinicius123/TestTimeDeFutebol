@@ -48,7 +48,7 @@ public class Partida {
             list.add(GoleiroA);
         }
         if(escolhaDoTime.equals("B")){
-            AtacanteB = new Atacante(40);
+            AtacanteB = new Atacante(50);
             MeioDeCampoB = new MeioDeCampo(50);
             GoleiroB = new Goleiro(70);
             list2.add(AtacanteB);
@@ -57,7 +57,7 @@ public class Partida {
         }
 
         if(escolhaDoTime.equals("C")){
-            AtacanteC = new Atacante(50);
+            AtacanteC = new Atacante(60);
             MeioDeCampoC = new MeioDeCampo(60);
             GoleiroC = new Goleiro(50);
             list3.add(AtacanteC);
@@ -80,7 +80,7 @@ public class Partida {
          */
 
         switch(timeJogando){
-            case 1: //timeA
+            case 1: //time1
                 switch(localBola){
 
                     case 1:
@@ -114,18 +114,18 @@ public class Partida {
 
                     case 4:
                         System.out.println("Gol do time 1");
-                        System.out.println("O time A ganhou");
+                        System.out.println("O time 1 ganhou");
                         System.exit(0);
 
                         break;
 
                 }
 
-            case 2: //timeB
+            case 2: //time2
                 switch(localBola){
 
                     case 1:
-                        if(list2.size() != 0 && list3.size() == 0){
+                        if(list2.size() != 0 && list3.size() == 0){                     //B ou C
                             GoleiroB.PassarAbola(probabilidade, Partida, timeJogando);
                         }
                         if(list2.size() == 0 && list3.size() != 0){
@@ -155,7 +155,7 @@ public class Partida {
 
                     case 4:
                         System.out.println("Gol do time 2");
-                        System.out.println("O time B ganhou");
+                        System.out.println("O time 2 ganhou");
                         System.exit(0);
 
                         break;

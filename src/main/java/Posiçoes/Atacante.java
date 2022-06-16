@@ -32,7 +32,7 @@ public class Atacante extends Jogador implements Ataque {
                 } else {                                          //Se for false, a bola passa para a defesa do outro time
                     localBola = 1;
                     timeJogando = 2;
-                    System.out.println("time 1 perdeu a bola para o time 2, bola no goleiro do time 2");
+                    System.out.println("Time 1 perdeu a bola para o time 2, bola no goleiro do time 2");
                     ChanceDeGOL = ChanceDeGOL + 10;
                     Partida.simulaPartida(timeJogando, localBola, Partida);
 
@@ -42,13 +42,13 @@ public class Atacante extends Jogador implements Ataque {
                 if (probabilidade <= ChanceDeGOL) {                              //Se for True, Faz gol
                     localBola = 4;
                     timeJogando = 2;
-                    System.out.println("time 2 marcou gol");
+                    System.out.println("Time 2 marcou gol");
                     Partida.simulaPartida(timeJogando, localBola, Partida);
 
                 } else {                                                        //Se for false, a bola passa para a defesa do outro time
                     localBola = 1;
                     timeJogando = 1;
-                    System.out.println("time 2 perdeu a bola para o itme 1, bola no goleiro do time 1");
+                    System.out.println("Time 2 perdeu a bola para o time 1, bola no goleiro do time 1");
                     ChanceDeGOL = ChanceDeGOL + 10;
                     Partida.simulaPartida(timeJogando, localBola, Partida);
 

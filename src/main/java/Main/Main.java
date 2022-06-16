@@ -12,28 +12,29 @@ import java.util.Scanner;
 public class Main {
 
     public static void main(String[] args) {
-        //quem começa a partida
-        Random random = new Random();
-        int numero = random.nextInt(2) + 1;
 
-        System.out.println(numero);
+        //Criaçao das variaveis
+        String Time1, Time2; //Times de entrada
 
-        Partida Partida = new Partida();
+        Random random = new Random();  //Numero aleatorio para decidir qual time começara a partida
+        int timeJogando = random.nextInt(2) + 1;  // +1 para o timeJogando estar entre 1 e 2
 
-        Scanner ler = new Scanner(System.in);
-        String Time1;
-        String Time2;
+        System.out.println(timeJogando);  //Mostrando qual time vai começar
 
+        Partida Partida = new Partida(); //Criaçao de uma nova partida
+
+        Scanner ler = new Scanner(System.in); //Pedir para o usuario digitar o time desejado
         System.out.println("Escolha o seu time A, B ou C");
         Time1 = ler.next();
 
-        Partida.EscolhendoTime(Time1);
+        Partida.EscolhendoTime(Time1);  //Criaçao do time na .partida
 
         System.out.println("Escolha o seu time A, B ou C");
         Time2 = ler.next();
 
-        Partida.EscolhendoTime(Time2);
+        Partida.EscolhendoTime(Time2);  //Criaçao do time2 na .partida
 
-        Partida.simulaPartida(numero, 2, Partida);
+        Partida.simulaPartida(timeJogando, 2, Partida);  //Simulando uma partida de futebol
+
     }
 }

@@ -4,7 +4,6 @@ import Jogador.Jogador;
 import Posiçoes.Atacante;
 import Posiçoes.Goleiro;
 import Posiçoes.MeioDeCampo;
-import org.w3c.dom.ls.LSOutput;
 
 import java.util.ArrayList;
 import java.util.Random;

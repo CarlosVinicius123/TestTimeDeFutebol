@@ -84,7 +84,7 @@ public class Partida {
                 switch(localBola){
 
                     case 1:
-                        if(list.size() != 0 && list2.size() == 0){
+                        if(list.size() != 0 && list2.size() == 0){   //Qual time foi criado, A ou B
                             GoleiroA.PassarAbola(probabilidade, Partida, timeJogando);
                         }
                         if(list.size() == 0 && list2.size() != 0){

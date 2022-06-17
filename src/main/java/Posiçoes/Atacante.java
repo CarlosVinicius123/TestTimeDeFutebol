@@ -10,8 +10,7 @@ public class Atacante extends Jogador implements Ataque {
     int ataque;
     int localBola;
     int numero;
-
-    int ChanceDeGOL = 50 - ataque;
+    int ChanceDeGOL = 0;
 
     public Atacante(int ataque){
         this.ataque = ataque;
@@ -19,6 +18,9 @@ public class Atacante extends Jogador implements Ataque {
 
     @Override
     public void FazerGol(int probabilidade, Partida Partida, int timeJogando){
+        if(ChanceDeGOL == 0){
+            ChanceDeGOL = ataque - 20;
+        }
         if(ChanceDeGOL < 0){             //Caso a chance de gol seja -0
             ChanceDeGOL = 0;
         }

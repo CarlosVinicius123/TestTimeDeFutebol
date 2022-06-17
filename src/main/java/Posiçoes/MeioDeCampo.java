@@ -1,22 +1,24 @@
 package Posiçoes;
 import Jogador.Jogador;
 import Partida.Partida;
-
+import java.util.Random;
 public class MeioDeCampo extends Jogador {
 
     // atributos do MeioDeCampo depende do time
     int dominio;
     int localBola;
     int numero;
-
-    int ChanceDePasse = 10 + dominio;
-
+    int  ChanceDePasse = 0;
     public MeioDeCampo(int dominio) {
         this.dominio = dominio;
     }
+
     @Override
     public void PassarAbola(int probabilidade, Partida Partida,int timeJogando) {
-        if (timeJogando == 1) {
+        if(ChanceDePasse == 0) {
+            ChanceDePasse = 10 + dominio;
+        }
+            if (timeJogando == 1) {
             if (probabilidade <= ChanceDePasse) {                        //Se for true, passa para o ataque
                 localBola = 3;
                 timeJogando = 1;

@@ -8,16 +8,17 @@ public class Goleiro extends Jogador {
     // atributos do goleiro depende do time
     int defesa;
     int localBola;
-
+    int ChanceDePasseGoleiro = 0;
 
     public Goleiro(int defesa){
         this.defesa = defesa;
     }
 
-    int ChanceDePasseGoleiro = 10 + defesa;  //Chance de ocorrer o Passe
-
     @Override
     public void PassarAbola(int probabilidade, Partida Partida,int timeJogando){
+        if(ChanceDePasseGoleiro == 0) {
+            ChanceDePasseGoleiro = 10 + defesa;
+        }
         //Verifica qual time esta com a bola
         if(timeJogando == 1) {
             if (probabilidade <= ChanceDePasseGoleiro) {               //Se for True, a bola passa para o MeioDeCampo
@@ -39,7 +40,7 @@ public class Goleiro extends Jogador {
             if (probabilidade <= ChanceDePasseGoleiro) {                  //Se for True, a bola passa para o MeioDeCampo
                 localBola = 2;
                 timeJogando = 2;
-                System.out.println("Time 1 passou a bola do goleiro para o meio de campo");
+                System.out.println("Time 2 passou a bola do goleiro para o meio de campo");
                 Partida.simulaPartida(timeJogando, localBola,Partida);
 
             } else {                                                      //Se for false, a bola passa para o Ataque do outro time

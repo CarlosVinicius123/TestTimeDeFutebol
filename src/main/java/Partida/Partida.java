@@ -79,6 +79,7 @@ public class Partida {
            Case 4: Gol
          */
 
+
         switch(timeJogando){
             case 1: //time1
                 switch(localBola){
@@ -90,6 +91,9 @@ public class Partida {
                         if(list.size() == 0 && list2.size() != 0){
                             GoleiroB.PassarAbola(probabilidade, Partida, timeJogando);
                         }
+                        if(list.size() != 0 && list2.size() != 0){
+                            GoleiroA.PassarAbola(probabilidade, Partida, timeJogando);
+                        }
                         break;
 
                     case 2:
@@ -98,6 +102,9 @@ public class Partida {
                         }
                         if(list.size() == 0 && list2.size() != 0){
                             MeioDeCampoB.PassarAbola(probabilidade, Partida, timeJogando);
+                        }
+                        if(list.size() != 0 && list2.size() != 0){
+                            MeioDeCampoA.PassarAbola(probabilidade, Partida, timeJogando);
                         }
                         break;
 
@@ -108,6 +115,9 @@ public class Partida {
                         }
                         if(list.size() == 0 && list2.size() != 0){
                             AtacanteB.FazerGol(probabilidade, Partida, timeJogando);
+                        }
+                        if(list.size() != 0 && list2.size() != 0){
+                            AtacanteA.FazerGol(probabilidade, Partida, timeJogando);
                         }
                         break;
 

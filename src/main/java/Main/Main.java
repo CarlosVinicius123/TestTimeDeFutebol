@@ -17,7 +17,8 @@ public class Main {
 
         Partida.MostrarProb();
 
-        Scanner ler = new Scanner(System.in); //Pedir para o usuario digitar o time desejado
+        //Pedir para o usuario digitar o time desejado, Time A : Ataque, Time B: Defesa, Time C: Meio de campo
+        Scanner ler = new Scanner(System.in);
         System.out.println("Escolha o seu time A, B ou C");
         Time1 = ler.next();
 
